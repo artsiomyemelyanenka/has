@@ -58,6 +58,12 @@
             <version>3.0.24</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant-compress</artifactId>
+            <version>1.5</version>
+        </dependency>
+
     </dependencies>
 
     <build>
