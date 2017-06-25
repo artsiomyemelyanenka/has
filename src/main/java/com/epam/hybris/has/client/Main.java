@@ -69,7 +69,7 @@ public class Main
 	}
 
 	static class CheckVersion implements Runnable {
-		final static String URL_VERSION = "https://raw.githubusercontent.com/artsiomyemelyanenka/has/master/src/main/java/com/epam/hybris/has/client/version.property";
+		final static String URL_VERSION = "https://raw.githubusercontent.com/artsiomyemelyanenka/has/master/src/main/resources/version.properties";
 		final static String VERSION = "version";
 		final static String VERSION_PROPERTIES = "version.properties";
 		@Override
