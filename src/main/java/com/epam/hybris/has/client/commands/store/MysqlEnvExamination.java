@@ -1,8 +1,12 @@
-package com.epam.hybris.has.client.commands;
+package com.epam.hybris.has.client.commands.store;
 
 import org.codehaus.plexus.util.cli.CommandLineException;
 import org.codehaus.plexus.util.cli.CommandLineUtils;
 import org.codehaus.plexus.util.cli.Commandline;
+
+import com.epam.hybris.has.client.commands.Cmd;
+import com.epam.hybris.has.client.commands.CmdContext;
+import com.epam.hybris.has.client.commands.Const;
 
 
 /**
@@ -11,7 +15,7 @@ import org.codehaus.plexus.util.cli.Commandline;
 public class MysqlEnvExamination implements Cmd
 {
 
-	static final String MYSQLDUMP = "mysqldump";
+	public static final String MYSQLDUMP = "mysqldump";
 	public static final String MYSQLDUMP_VERSION = "--version";
 
 	@Override

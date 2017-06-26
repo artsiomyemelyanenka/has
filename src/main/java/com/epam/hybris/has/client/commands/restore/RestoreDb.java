@@ -1,4 +1,4 @@
-package com.epam.hybris.has.client.commands.image;
+package com.epam.hybris.has.client.commands.restore;
 
 import org.codehaus.plexus.util.cli.CommandLineUtils;
 import org.codehaus.plexus.util.cli.Commandline;
@@ -27,7 +27,7 @@ public class RestoreDb implements Cmd
 				"--password=" + context.get(Const.DB_PASSWORD),//
 				context.getString(Const.DB_SCHEME),//
 				"-e",//
-				" source " + image.getDbDump().getAbsolutePath()});
+				" source " + image.getDbDumpSql().getAbsolutePath()});
 		context.message(commandline.toString());
 		CommandLineUtils.StringStreamConsumer err = new CommandLineUtils.StringStreamConsumer();
 		CommandLineUtils.StringStreamConsumer out = new CommandLineUtils.StringStreamConsumer();

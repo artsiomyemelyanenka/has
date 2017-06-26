@@ -15,6 +15,10 @@ public class GetGitCurrentBranch implements Cmd
 	@Override
 	public void execute(CmdContext context)
 	{
+		if (context.get(Const.GIT_BRANCH) != null) {
+			context.message("Skip branch detection. Use " + context.get(Const.GIT_BRANCH));
+			return;
+		}
 		File gitWorkDir = new File(context.getBaseFolder(), "../custom");
 		try
 		{

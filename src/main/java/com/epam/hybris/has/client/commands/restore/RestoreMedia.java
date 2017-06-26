@@ -1,4 +1,4 @@
-package com.epam.hybris.has.client.commands.image;
+package com.epam.hybris.has.client.commands.restore;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,6 +13,7 @@ import com.epam.hybris.has.client.model.Image;
 
 
 /**
+ * @deprecated
  */
 public class RestoreMedia implements Cmd
 {

@@ -8,6 +8,8 @@ import java.util.Map;
 
 import org.springframework.stereotype.Component;
 
+import com.epam.hybris.has.client.repository.Repository;
+
 
 /**
  */
@@ -19,6 +21,7 @@ public class Context implements CmdContext, Closeable
 	private Map<String, Object> context;
 	private Map<String, Closeable> resources;
 	private String error;
+	private Repository repository;
 
 	public Context()
 	{
@@ -123,6 +126,18 @@ public class Context implements CmdContext, Closeable
 			}
 		}
 		return cacheFolder;
+	}
+
+	@Override
+	public Repository getRepository()
+	{
+		return repository;
+	}
+
+	@Override
+	public void setRepository(Repository repository)
+	{
+		this.repository = repository;
 	}
 }
 

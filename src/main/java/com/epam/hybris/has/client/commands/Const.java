@@ -20,4 +20,7 @@ public class Const
 	public static final String REMOTE_MEDIA_STREAM = "REMOTE.MEDIA.STREAM";
 	public static final String REMOTE_DUMP_STREAM = "REMOTE.DUMP.STREAM";
 	public static final String REMOTE_IMAGE_SPEC = "REMOTE.IMAGE.SPEC";
+	public static final String PROJECT_NAME = "project.name";
+	public static final String SQL_DUMP_FILE = "sql.dump.file";
+	public static final String DATA_ZIP_FILE = "data.zip.file";
 }

@@ -7,6 +7,10 @@ import java.io.IOException;
 import org.codehaus.plexus.util.cli.CommandLineException;
 import org.springframework.stereotype.Component;
 
+import com.epam.hybris.has.client.repository.Repository;
+import com.epam.hybris.has.client.repository.impl.FilesystemRepository;
+
+
 @Component
 public interface CmdContext
 {
@@ -33,4 +37,8 @@ public interface CmdContext
 	void addResource(String key, Closeable res);
 
 	Closeable getResource(String key);
+
+	void setRepository(Repository repository);
+
+	Repository getRepository();
 }

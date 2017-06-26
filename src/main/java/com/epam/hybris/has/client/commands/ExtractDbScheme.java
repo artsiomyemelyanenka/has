@@ -19,7 +19,7 @@ public class ExtractDbScheme implements Cmd
 		if (m.find()) {
 			String host = m.group(1);
 			if (!Const.LOCALHOST.equals(host)) {
-				System.err.println("The db should be local!");
+				context.addErrorMessage("The db should be local");
 				return;
 			}
 			String dbScheme = m.group(2);
@@ -27,6 +27,7 @@ public class ExtractDbScheme implements Cmd
 		} else {
 			System.err.println("Can't parse jdbc url. Example of the url below:");
 			System.err.println("jdbc:mysql://localhost/amway?useConfigs=maxPerformance&rewriteBatchedStatements=true&useUnicode=true&characterEncoding=utf8&useSSL=false");
+			context.addErrorMessage("Can't parse DB scheme.");
 			return;
 		}
 	}

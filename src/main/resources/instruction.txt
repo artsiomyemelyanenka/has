@@ -1,0 +1,11 @@
+Usage:
+java -jar has-client-1.0-SNAPSHOT-jar-with-dependencies.jar <MODE> [arguments]
+The program must be run in hybris/bin/platform folder.
+
+MODE is one of:
+- restore
+- dump (NOT IMPLEMENTED)
+
+Restore:
+possible arguments: [branchName]
+If 'branchName' specified, then the system ignores local git branch.

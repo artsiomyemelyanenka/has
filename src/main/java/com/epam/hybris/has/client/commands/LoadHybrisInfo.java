@@ -27,7 +27,7 @@ public class LoadHybrisInfo implements Cmd
 		}
 		catch (ConfigurationException e)
 		{
-			System.err.println("Can't find buils.properties. Please, run at hybris/bin/platform folder.");
+			context.addErrorMessage("Can't find buils.properties. Please, run at hybris/bin/platform folder.");
 		}
 	}
 

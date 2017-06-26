@@ -1,9 +1,7 @@
 package com.epam.hybris.has.client.model;
 
-import java.io.Closeable;
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+import java.util.Map;
 
 
 /**
@@ -12,15 +10,38 @@ public class Image
 {
 	private final ImageSpec spec;
 
-	private final File dbDump;
+	/**
+	 * File with SQL instructions to restore DB.
+	 */
+	private File dbDumpSql;
 
-	private final File media;
+	private File binDump;
+
+	/**
+	 * Media folder in zip archive.
+	 */
+	private File media;
+
+	/**
+	 * Entire hybris data folder in zip archive.
+	 */
+	private File data;
+
+	Map<String, String> meta;
 
 	public Image(ImageSpec spec, File dbDump, File media)
 	{
 		this.spec = spec;
-		this.dbDump = dbDump;
+		this.dbDumpSql = dbDump;
 		this.media = media;
+	}
+
+	public Image(ImageSpec spec, File dbDumpSql, File data, Map<String, String> meta)
+	{
+		this.spec = spec;
+		this.dbDumpSql = dbDumpSql;
+		this.data = data;
+		this.meta = meta;
 	}
 
 	public ImageSpec getSpec()
@@ -28,13 +49,28 @@ public class Image
 		return spec;
 	}
 
-	public File getDbDump()
+	public File getDbDumpSql()
 	{
-		return dbDump;
+		return dbDumpSql;
 	}
 
 	public File getMedia()
 	{
 		return media;
+	}
+
+	public File getBinDump()
+	{
+		return binDump;
+	}
+
+	public File getData()
+	{
+		return data;
+	}
+
+	public Map<String, String> getMeta()
+	{
+		return meta;
 	}
 }
