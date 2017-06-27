@@ -73,7 +73,6 @@ public class Main
 				new LoadSettingsFromProperties(),
 				new MysqlEnvExamination(),
 				new InitRepository(),
-				new GetGitCurrentBranch(),
 				new LoadDbInfo(),
 				new ExtractDbScheme(),
 				new BeforeRestoreCheckContext(),

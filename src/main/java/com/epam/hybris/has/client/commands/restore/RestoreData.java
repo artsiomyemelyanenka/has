@@ -25,6 +25,12 @@ public class RestoreData implements Cmd
 		} else {
 			backupData(context, dataFolder);
 		}
+		try {
+			dataFolder = dataFolder.getCanonicalFile();
+		} catch (IOException ex) {
+			ex.printStackTrace();
+			context.addErrorMessage("Can't get datta folder. " + dataFolder.getAbsolutePath());
+		}
 		if (! dataFolder.mkdirs()) {
 			context.addErrorMessage("Can't create new data folder. " + dataFolder.getAbsolutePath());
 		}
@@ -32,7 +38,7 @@ public class RestoreData implements Cmd
 		File mediaZip = image.getData();
 		Unzip u = new Unzip();
 		u.setSrc(mediaZip);
-		u.setDest(dataFolder.getParentFile());
+		u.setDest(dataFolder);
 		context.process("Unzip media");
 		u.execute();
 	}
