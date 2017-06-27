@@ -23,12 +23,26 @@ public class GetGitCurrentBranch implements Cmd
 		try
 		{
 			Git git = Git.open(gitWorkDir);
+			if (git == null) {
+				noGitCase(context);
+				return;
+			}
 			Repository repository = git.getRepository();
+			if (repository == null) {
+				noGitCase(context);
+				return;
+			}
 			context.set(Const.GIT_BRANCH, repository.getBranch());
 		}
 		catch (IOException e)
 		{
 			e.printStackTrace();
 		}
+	}
+
+	private void noGitCase(CmdContext context)
+	{
+		context.message("No git repository found. Using technical branch 'nogit'");
+		context.set(Const.GIT_BRANCH, "nogit");
 	}
 }

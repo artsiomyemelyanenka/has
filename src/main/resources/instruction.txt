@@ -4,8 +4,12 @@ The program must be run in hybris/bin/platform folder.
 
 MODE is one of:
 - restore
-- dump (NOT IMPLEMENTED)
+- store
 
 Restore:
+possible arguments: [branchName]
+If 'branchName' specified, then the system ignores local git branch.
+
+Store:
 possible arguments: [branchName]
 If 'branchName' specified, then the system ignores local git branch.
