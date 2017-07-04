@@ -5,6 +5,7 @@ The program must be run in hybris/bin/platform folder.
 MODE is one of:
 - restore
 - store
+- restoreSimple [to be deprecated] download media archive and db from single links
 
 Restore:
 possible arguments: [branchName]
